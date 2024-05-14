@@ -93,7 +93,7 @@ func (c *PSConfig) ServeTCP(conn net.Conn) {
 					fmt.Println("psStream nil")
 					return
 				}
-				PSPlugin.Warn("publisher not found", zap.Uint32("ssrc", psStream.SSRC))
+				//PSPlugin.Warn("publisher not found", zap.Uint32("ssrc", psStream.SSRC))
 				cache = append(cache, append([]byte(nil), data...))
 				if time.Since(startTime) > time.Second*5 {
 					return fmt.Errorf("publisher not found")
